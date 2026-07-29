@@ -1,0 +1,8 @@
+# Lake build output and fetched dependencies
+/.lake/
+
+# Editor / OS cruft
+*.olean
+*.ilean
+*.trace
+.DS_Store

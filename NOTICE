@@ -1,0 +1,19 @@
+sum-diff-proof
+Copyright 2026 Haowei Lin <linhaowei@pku.edu.cn>
+
+This repository contains a Lean 4 / mathlib formalization of a sharp result on
+the sum/difference growth exponent
+
+    C(A) = log(|A + A| / |A|) / log(|A - A| / |A|).
+
+The underlying set construction and its sum/difference cardinality analysis --
+the base-12 digit set, the carry/borrow transition automata, the T/S/U
+recurrences, and the periodization argument -- were discovered by Hyra, an
+agent-based test-time-scaling framework, while solving its `sum_diffs_informal`
+task (maximize C(A) over finite integer sets). This repository independently formalizes that construction in Lean and sharpens it,
+proving that the growth exponent is strictly below 2 for every admissible set,
+that its supremum over all admissible sets equals 2, and that 2 is never
+attained.
+
+This product is licensed under the Apache License, Version 2.0; see the LICENSE
+file.
