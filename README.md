@@ -1,9 +1,10 @@
 # Settling the Optimal Exponent Relating Sumsets and Difference Sets
 
-A Lean 4 / [mathlib](https://github.com/leanprover-community/mathlib4) formalization.
+A Lean 4 / [mathlib](https://github.com/leanprover-community/mathlib4) formalization of the
+companion paper [**"Settling the Optimal Exponent Relating Sumsets and Difference Sets"**](paper/settling-the-optimal-exponent.pdf).
 
-> The set construction formalized here was **discovered by Hyra**, a research agent
-> developed by Tencent Hunyuan — see [Provenance & attribution](#provenance--attribution).
+> The set construction formalized here was **developed with the assistance of Hyra**, an
+> AI research agent from Tencent Hunyuan — see [Provenance & attribution](#provenance--attribution).
 
 For a finite set of integers `A` with `|A| ≥ 2`, define the **sum/difference growth
 exponent**
@@ -16,7 +17,7 @@ where `A + A` and `A − A` are the pointwise sumset and difference set. This re
 proves:
 
 1. **Universal strict upper bound.** `C(A) < 2` for every finite `A ⊆ ℤ` with `|A| ≥ 2`.
-2. **The supremum is exactly `2`.** `sSup { C(A) : A ⊆ ℤ finite, |A| ≥ 2 } = 2`.
+2. **The supremum is exactly `2`.** `Sup { C(A) : A ⊆ ℤ finite, |A| ≥ 2 } = 2`.
 3. **The supremum is not attained.** No admissible `A` has `C(A) = 2`.
 4. **A quantitative witness.** There is an explicit finite `A` with
    `2 − 10⁻⁹⁹⁹ < C(A) < 2`.
@@ -116,15 +117,25 @@ do **not** feed the final theorems (they are not in the axiom footprint above).
 
 ## Provenance & attribution
 
-The mathematical construction formalized here was **discovered by [Hyra](https://hy.tencent.com/research/hyra)**, an
-AI research agent. This repository takes that construction further. It gives a machine-checked
-Lean 4 / mathlib proof of the **sharp** statement — the growth exponent is `< 2`
-for *every* admissible set, its supremum over all such sets is exactly `2`, and
-`2` is never attained — using a kernel-friendly base-39 variant of the same
-idea (the base-12 automata above are retained in `SumDiffExponent.lean` as a
-faithful record of Hyra's construction, but are not load-bearing for the final
-theorems). The formalization, project scaffolding, and this write-up are not
-part of Hyra.
+The underlying finite-set construction was developed with the assistance of
+[Hyra](https://hy.tencent.com/research/hyra), an AI research agent from Tencent Hunyuan
+(based on the Hy3 model).
+
+This repository gives a machine-checked Lean 4 / mathlib proof of the **sharp** statement —
+the growth exponent is `< 2` for *every* admissible set, its supremum over all such sets is
+exactly `2`, and `2` is never attained — using a kernel-friendly base-39 variant of the
+paper's base-12 construction (the base-12 automata are retained in `SumDiffExponent.lean` as
+a faithful record of the manuscript, but are not load-bearing for the final theorems).
+
+## Citation
+
+```bibtex
+@misc{lin2026settling,
+  title  = {Settling the Optimal Exponent Relating Sumsets and Difference Sets},
+  author = {Lin, Haowei and Li, Shanda},
+  year   = {2026},
+}
+```
 
 ## License
 
